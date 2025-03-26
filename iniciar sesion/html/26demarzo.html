@@ -6,21 +6,37 @@
     <title>Document</title>
     <script src="/jquery/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="/css/26demarzo.css">
-
+    <script>
+        $(document).ready(function(){
+          $(".mostrar").click(function(){
+            $(".formulario").fadeIn(300);
+            $(".mostrar").hide();
+            $(".ocultar").show();
+          });
+    
+          $(".ocultar").click(function(){
+            $(".formulario").fadeOut(300);
+            $(".ocultar").hide();
+            $(".mostrar").show();
+          });
+    
+          $(".ocultar").hide();
+        });
+      </script>
 </head>
 <body>
     <div class="container">
-        <div class="botones">
+        <div class="encabezado">
             <h1 class="h1">INICIAR SESION</h1>
-            <button type="button">+</button>
-            <button type="button">-</button>
+            <button type="button" class="mostrar">+</button>
+            <button type="button" class="ocultar">-</button>
         </div>
-        <div class="formulario">
+        <form class="formulario">
             <label for="text">Usuario</label>
             <input type="text">
             <label for="text">Contraseña</label>
             <input type="text">
-        </div>
+        </form>
     </div>
 </body>
 </html>
